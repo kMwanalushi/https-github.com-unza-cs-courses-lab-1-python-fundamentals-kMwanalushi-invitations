@@ -1,42 +1,34 @@
 #!/usr/bin/env python3
 """
-Lab 1 - Task 3: Arithmetic Expressions
+Lab 1 - Task 4: User Input and Output
 GGY3061 Python Programming for Earth Sciences
 
 Instructions:
-1. Check README.md for YOUR unique values
-2. Replace placeholder values with your assigned value
-3. Complete the calculations as specified
+1. This task collects sample information from user input
+2. The program should validate and format the output
+3. Classification threshold: grade >= 2.0 is "Economic"
 
-TODO: Complete this file using your assigned values from README.md
+TODO: Complete the sample entry system below
 """
 
-import math
+# Collect sample information from user
+sample_id = input('Enter sample ID:')
+rock_type = input('Enter rock type:')
+grade = float(input('Enter grade (%):'))
+depth = int(input('Enter depth (meters):'))
 
-# Given data - USE YOUR ASSIGNED VALUES FROM README.md
-mass = 10.9      # TODO: Replace with your sample_mass (kg)
-volume = 7.5    # TODO: Replace with your sample_volume (cubic meters)
-depth_start = 100  # meters (keep this value)
-depth_end = 418      # TODO: Replace with your sample_depth (meters)
+# Display formatted summary
+print('\n--- Sample Summary ---')
+print(f'Sample ID: {sample_id}')
+print(f'Rock Type: {rock_type}')
+print(f'Grade: {grade:.2f}%')
+print(f'Depth: {depth} meters')
 
-# Calculate density (mass / volume)
-# TODO: Calculate and print density to 2 decimal places
-density = mass / volume # YOUR CALCULATION HERE
-print(f'Density: {density:.2f} kg/m3')
-
-# Calculate drilling interval
-# TODO: Calculate interval (depth_end - depth_start)
-interval = depth_end - depth_start # YOUR CALCULATION HERE
-print(f'Drilling interval: {interval} meters')
-
-# Calculate average depth
-# TODO: Calculate average of depth_start and depth_end
-avg_depth = (depth_start + depth_end) / 2  # YOUR CALCULATION HERE
-print(f'Average depth: {avg_depth} meters')
-
-# Calculate volume of cylindrical core
-# radius = 0.05m (5cm), length = interval
-# Formula: V = pi * r^2 * length
-radius = 0.05
-core_volume = math.pi * radius**2 * interval # TODO: YOUR CALCULATION HERE
-print(f'Core volume: {core_volume:.4f} cubic meters')
+# Classify the grade
+# TODO: Add the classification logic
+# If grade >= 2.0, print "Classification: Economic"
+# Otherwise, print "Classification: Sub-economic"
+if grade >= 2.0:
+    print("Classification: Economic")
+else:
+    print("Classification: Sub-economic")
